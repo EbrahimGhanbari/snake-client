@@ -13,7 +13,7 @@ const connect = function() {
   conn.on('connect', () => {
     conn.write('Name: ABE');
 
-    conn.write('Move: up');
+    // conn.write('Move: up');
   });
   
   conn.on('data', (message) => {
