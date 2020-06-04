@@ -6,12 +6,20 @@ const connect = function() {
     host: '135.23.222.148',
     port: 50541
   });
-  // interpret incoming data as text
+
   conn.setEncoding('utf8'); 
 
+
+  conn.on('connect', () => console.log('connection established'));
+  conn.on('connect', () => {
+    conn.write('Name: ABE');
+  });
   conn.on('data', (message) => {
     console.log('message from Server :>> ', message);
   })
+
+ 
+
 
   return conn;
 }
