@@ -9,17 +9,16 @@ const connect = function() {
 
   conn.setEncoding('utf8'); 
 
-
   conn.on('connect', () => console.log('connection established'));
   conn.on('connect', () => {
     conn.write('Name: ABE');
+
+    conn.write('Move: up');
   });
+  
   conn.on('data', (message) => {
     console.log('message from Server :>> ', message);
   })
-
- 
-
 
   return conn;
 }
